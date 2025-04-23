@@ -22,18 +22,16 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "USER")
+@Table(name = "USERS")
 public class User {
 
   @Id
-  @Column(name = "ID")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(name = "NAME")
+  @Column(length = 500)
   private String name;
 
-  @Column(name = "DATE_OF_BIRTH")
   private LocalDate birthday;
 
   @Column(length = 500)

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+  <changeSet author="Ivan Klezovich" id="1">
+    <addForeignKeyConstraint baseColumnNames="USER_ID"
+      baseTableName="ACCOUNT"
+      constraintName="FK_ACCOUNT_USER"
+      referencedColumnNames="ID"
+      referencedTableName="USERS"/>
+
+    <createTable tableName="ACCOUNT">
+      <column name="ID" type="BIGINT">
+        <constraints nullable="false" primaryKey="true"/>
+      </column>
+      <column name="USER_ID" type="BIGINT">
+        <constraints nullable="false"/>
+      </column>
+      <column name="BALANCE" type="decimal"/>
+      <column name="START_DEPOSIT" type="decimal(19,2)"/>
+    </createTable>
+  </changeSet>
+</databaseChangeLog>

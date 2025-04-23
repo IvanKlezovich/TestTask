@@ -15,8 +15,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -28,11 +26,16 @@ public class PhoneData {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   Long id;
 
+  @Getter
+  @Setter
   @ManyToOne
   @JoinColumn(name = "USER_ID")
   User user;
 
 
+  @Getter
+  @Setter
   @Column(name = "PHONE", length = 13, unique = true)
   String phone;
+
 }

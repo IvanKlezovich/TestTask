@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+  <changeSet author="Ivan Klezovich" id="9">
+    <insert tableName="ACCOUNT">
+      <column name="ID">1</column>
+      <column name="USER_ID">1</column>
+      <column name="BALANCE">1000.00</column>
+      <column name="START_DEPOSIT">1000.00</column>
+    </insert>
+
+    <insert tableName="ACCOUNT">
+      <column name="ID">2</column>
+      <column name="USER_ID">2</column>
+      <column name="BALANCE">2000.00</column>
+      <column name="START_DEPOSIT">2000.00</column>
+    </insert>
+
+    <insert tableName="ACCOUNT">
+      <column name="ID">3</column>
+      <column name="USER_ID">3</column>
+      <column name="BALANCE">1500.00</column>
+      <column name="START_DEPOSIT">1500.00</column>
+    </insert>
+
+    <insert tableName="ACCOUNT">
+      <column name="ID">4</column>
+      <column name="USER_ID">4</column>
+      <column name="BALANCE">2500.00</column>
+      <column name="START_DEPOSIT">2500.00</column>
+    </insert>
+
+    <insert tableName="ACCOUNT">
+      <column name="ID">5</column>
+      <column name="USER_ID">5</column>
+      <column name="BALANCE">3000.00</column>
+      <column name="START_DEPOSIT">3000.00</column>
+    </insert>
+
+    <insert tableName="ACCOUNT">
+      <column name="ID">6</column>
+      <column name="USER_ID">6</column>
+      <column name="BALANCE">1200.00</column>
+      <column name="START_DEPOSIT">1200.00</column>
+    </insert>
+
+    <insert tableName="ACCOUNT">
+      <column name="ID">7</column>
+      <column name="USER_ID">7</column>
+      <column name="BALANCE">1800.00</column>
+      <column name="START_DEPOSIT">1800.00</column>
+    </insert>
+
+    <insert tableName="ACCOUNT">
+      <column name="ID">8</column>
+      <column name="USER_ID">8</column>
+      <column name="BALANCE">2200.00</column>
+      <column name="START_DEPOSIT">2200.00</column>
+    </insert>
+
+    <insert tableName="ACCOUNT">
+      <column name="ID">9</column>
+      <column name="USER_ID">9</column>
+      <column name="BALANCE">2800.00</column>
+      <column name="START_DEPOSIT">2800.00</column>
+    </insert>
+
+    <insert tableName="ACCOUNT">
+      <column name="ID">10</column>
+      <column name="USER_ID">10</column>
+      <column name="BALANCE">3500.00</column>
+      <column name="START_DEPOSIT">3500.00</column>
+    </insert>
+  </changeSet>
+</databaseChangeLog>

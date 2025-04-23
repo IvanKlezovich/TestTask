@@ -12,11 +12,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Getter
-@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -35,4 +33,12 @@ public class EmailData {
 
   @Column(name = "EMAIL", length = 200, unique = true)
   String email;
+
+  public void setUser(User user) {
+    this.user = user;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
 }

@@ -1,0 +1,33 @@
+services:
+  db:
+    container_name: test-db
+    restart: always
+    networks:
+      internal:
+    image: 'postgres:latest'
+    environment:
+      POSTGRES_DB: test_database
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: user
+    ports:
+      - "5432:5432"
+
+  app:
+    container_name: testApp
+    build:
+      context: .
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://test-db:5432/skill_matrix
+      ENTRY_DELAY: 5
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      internal:
+
+networks:
+  internal:
+    name: "internal"
+    external: false

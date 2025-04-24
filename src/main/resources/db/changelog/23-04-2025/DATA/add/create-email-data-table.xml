@@ -5,22 +5,22 @@
                    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
   <changeSet author="Ivan Klezovich" id="2">
-    <addForeignKeyConstraint baseColumnNames="USER_ID"
-      baseTableName="EMAIL_DATA"
-      constraintName="FK_EMAIL_DATA_USER"
-      referencedColumnNames="ID"
-      referencedTableName="USERS"/>
-
     <createTable tableName="EMAIL_DATA">
-      <column name="ID" type="BIGINT">
+      <column name="ID" type="bigserial">
         <constraints nullable="false" primaryKey="true"/>
       </column>
-      <column name="USER_ID" type="BIGINT">
+      <column name="USER_ID" type="bigserial">
         <constraints nullable="false"/>
       </column>
       <column name="EMAIL" type="varchar(200)">
         <constraints nullable="false" unique="true"/>
       </column>
     </createTable>
+
+      <addForeignKeyConstraint baseColumnNames="USER_ID"
+                               baseTableName="EMAIL_DATA"
+                               constraintName="FK_EMAIL_DATA_USER"
+                               referencedColumnNames="ID"
+                               referencedTableName="USERS"/>
   </changeSet>
 </databaseChangeLog>

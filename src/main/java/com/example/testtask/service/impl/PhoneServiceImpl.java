@@ -7,8 +7,10 @@ import com.example.testtask.repository.UserRepository;
 import com.example.testtask.service.PhoneService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class PhoneServiceImpl implements PhoneService {
 

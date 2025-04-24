@@ -8,37 +8,32 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "EMAIL_DATA")
 public class EmailData {
-
   @Id
-  @Column(name = "ID")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  Long id;
+  private Long id;
 
   @ManyToOne
-  @JoinColumn(name = "USER_ID")
-  User user;
+  @JoinColumn(name = "USER_ID", nullable = false)
+  private User user;
 
-
-  @Column(name = "EMAIL", length = 200, unique = true)
-  String email;
-
-  public void setUser(User user) {
-    this.user = user;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
+    @Column(length = 200, unique = true)
+    @Email(message = "Неверный формат email")
+    @NotBlank(message = "Email не может быть пустым")
+    private String email;
 }

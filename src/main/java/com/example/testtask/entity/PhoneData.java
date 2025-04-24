@@ -8,34 +8,32 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Setter
+@Getter
 @Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "PHONE_DATA")
 public class PhoneData {
-
   @Id
-  @Column(name = "ID")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  Long id;
+  private Long id;
 
-  @Getter
-  @Setter
   @ManyToOne
-  @JoinColumn(name = "USER_ID")
-  User user;
+  @JoinColumn(name = "USER_ID", nullable = false)
+  private User user;
 
-
-  @Getter
-  @Setter
-  @Column(name = "PHONE", length = 13, unique = true)
-  String phone;
-
+    @Column(length = 13, unique = true)
+    @Pattern(regexp = "^\\d{11}$", message = "Телефон должен быть в формате 11 цифр")
+    @NotBlank(message = "Телефон не может быть пустым")
+    private String phone;
 }

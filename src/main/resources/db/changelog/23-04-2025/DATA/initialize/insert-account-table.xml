@@ -74,5 +74,10 @@
       <column name="BALANCE">3500.00</column>
       <column name="START_DEPOSIT">3500.00</column>
     </insert>
+
+    <sql>  SELECT setval('phone_data_id_seq', (SELECT MAX(id) FROM phone_data));  </sql>
+    <sql>  SELECT setval('email_data_id_seq', (SELECT MAX(id) FROM email_data));  </sql>
+    <sql>  SELECT setval('account_id_seq', (SELECT MAX(id) FROM account));  </sql>
+    <sql>  SELECT setval('users_id_seq', (SELECT MAX(id) FROM users));  </sql>
   </changeSet>
 </databaseChangeLog>

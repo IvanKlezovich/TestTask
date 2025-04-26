@@ -1,8 +1,10 @@
 package com.example.testtask.exception;
 
-public class AccountNotFoundException extends RuntimeException {
+import org.springframework.http.HttpStatus;
 
-  public AccountNotFoundException(String message) {
-    super(message);
+public class AccountNotFoundException extends ApiException {
+
+  public AccountNotFoundException(HttpStatus status, String message, Object... args) {
+    super(status, message, args);
   }
 }

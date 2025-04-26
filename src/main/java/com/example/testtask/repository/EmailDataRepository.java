@@ -14,4 +14,6 @@ public interface EmailDataRepository extends JpaRepository<EmailData, Long> {
       @Param("email") String email);
 
   EmailData getEmailDataByUser_IdAndEmail(Long userId, String email);
+
+  boolean existsEmailDataByEmail(String phoneNumber);
 }

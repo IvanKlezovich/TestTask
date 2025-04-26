@@ -1,8 +1,10 @@
 package com.example.testtask.exception;
 
-public class InvalidTransferException extends RuntimeException {
+import org.springframework.http.HttpStatus;
 
-  public InvalidTransferException(String message) {
-    super(message);
+public class InvalidTransferException extends ApiException {
+
+  public InvalidTransferException(String message, Object... args) {
+    super(HttpStatus.BAD_REQUEST, message, args);
   }
 }

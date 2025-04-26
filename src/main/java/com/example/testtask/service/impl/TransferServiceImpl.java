@@ -1,16 +1,17 @@
 package com.example.testtask.service.impl;
 
 import com.example.testtask.entity.Account;
-import com.example.testtask.exception.AccountNotFoundException;
+import com.example.testtask.exception.EntityExistsException;
 import com.example.testtask.exception.InvalidTransferException;
 import com.example.testtask.repository.AccountRepository;
 import com.example.testtask.service.TransferService;
-import java.math.BigDecimal;
-import java.util.concurrent.locks.StampedLock;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
+import java.util.concurrent.locks.StampedLock;
 
 @Service
 @RequiredArgsConstructor
@@ -32,10 +33,10 @@ public class TransferServiceImpl implements TransferService {
     long stamp = balanceLock.writeLock();
     try {
       Account senderAccount = accountRepository.findById(userIdFrom)
-          .orElseThrow(() -> new AccountNotFoundException("Отправитель не найден"));
+              .orElseThrow(() -> new EntityExistsException("Отправитель не найден"));
 
       Account recipientAccount = accountRepository.findById(userIdTo)
-          .orElseThrow(() -> new AccountNotFoundException("Получатель не найден"));
+              .orElseThrow(() -> new EntityExistsException("Получатель не найден"));
 
       validateBalance(senderAccount, money);
 

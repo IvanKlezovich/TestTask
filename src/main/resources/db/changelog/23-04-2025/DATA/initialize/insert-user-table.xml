@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+  <changeSet author="Ivan Klezovich" id="6">
+    <insert tableName="users">
+      <column name="id">1</column>
+      <column name="name">Алексей Николаевич</column>
+      <column name="date_of_birth">1978-03-15</column>
+      <column name="password">Kj9mN7pQ2rS</column>
+    </insert>
+
+    <insert tableName="users">
+      <column name="id">2</column>
+      <column name="name">Екатерина Сергеевна</column>
+      <column name="date_of_birth">1992-08-22</column>
+      <column name="password">LpM8nO9qR1t</column>
+    </insert>
+
+    <insert tableName="users">
+      <column name="id">3</column>
+      <column name="name">Михаил Андреевич</column>
+      <column name="date_of_birth">1987-02-14</column>
+      <column name="password">VbC4xZ5wD6e</column>
+    </insert>
+
+    <insert tableName="users">
+      <column name="id">4</column>
+      <column name="name">Мария Ивановна</column>
+      <column name="date_of_birth">1995-11-30</column>
+      <column name="password">HgF7jKlM9n</column>
+    </insert>
+
+    <insert tableName="users">
+      <column name="id">5</column>
+      <column name="name">Сергей Викторович</column>
+      <column name="date_of_birth">1982-06-28</column>
+      <column name="password">RsTqP3oN4m</column>
+    </insert>
+
+    <insert tableName="users">
+      <column name="id">6</column>
+      <column name="name">Наталья Михайловна</column>
+      <column name="date_of_birth">1991-09-18</column>
+      <column name="password">YcX8zW9vB7</column>
+    </insert>
+
+    <insert tableName="users">
+      <column name="id">7</column>
+      <column name="name">Дмитрий Петрович</column>
+      <column name="date_of_birth">1985-04-25</column>
+      <column name="password">EwQ2rT5yU7</column>
+    </insert>
+
+    <insert tableName="users">
+      <column name="id">8</column>
+      <column name="name">Анна Алексеевна</column>
+      <column name="date_of_birth">1993-01-12</column>
+      <column name="password">TnM9kL8pQ7</column>
+    </insert>
+
+    <insert tableName="users">
+      <column name="id">9</column>
+      <column name="name">Иван Васильевич</column>
+      <column name="date_of_birth">1989-07-20</column>
+      <column name="password">RsEwQ2rT5</column>
+    </insert>
+
+    <insert tableName="users">
+      <column name="id">10</column>
+      <column name="name">Ольга Николаевна</column>
+      <column name="date_of_birth">1994-03-15</column>
+      <column name="password">YzWxV9uB8n</column>
+    </insert>
+  </changeSet>
+</databaseChangeLog>

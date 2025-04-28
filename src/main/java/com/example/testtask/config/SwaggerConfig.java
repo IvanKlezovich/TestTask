@@ -16,8 +16,7 @@ import org.springframework.context.annotation.Configuration;
     in = SecuritySchemeIn.HEADER, paramName = "Authorization")
 public class SwaggerConfig {
 
-  private static final String TITLE = "AuthServiceAPI";
-  private static final String DESCRIPTION = "Auth service to manage authentication and user roles/privileges";
+  private static final String TITLE = "TestTaskAPI";
 
   @Bean
   public OpenAPI customOpenAPI(@Value("${server.servlet.context-path}") String contextPath) {
@@ -25,7 +24,6 @@ public class SwaggerConfig {
         .addServersItem(new Server().url(contextPath))
         .info(new Info()
             .title(TITLE)
-            .description(DESCRIPTION)
             .version("v1")
         );
   }

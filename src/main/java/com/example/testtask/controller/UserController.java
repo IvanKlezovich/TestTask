@@ -5,6 +5,8 @@ import com.example.testtask.dto.PageResponseDto;
 import com.example.testtask.dto.UserDto;
 import com.example.testtask.service.TransferService;
 import com.example.testtask.service.UserService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import jakarta.validation.constraints.Email;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import lombok.RequiredArgsConstructor;
@@ -19,17 +21,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/user")
+@SecurityRequirement(name = "Test-service")
 public class UserController implements UserControllerDocumentation {
 
   private final UserService userService;
   private final TransferService transferService;
-  //  private final AuthenticationService authService;
 
   @GetMapping(value = "/search/", produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<PageResponseDto<UserDto>> getUsersByFilter(
       @RequestParam(required = false) LocalDate dateOfBirth,
       @RequestParam(required = false) String phone,
       @RequestParam(required = false) String name,
+      @Email(message = "Неверный формат email")
       @RequestParam(required = false) String email,
       @RequestParam(defaultValue = "0") Integer page,
       @RequestParam(defaultValue = "10") Integer size) {
@@ -45,10 +48,4 @@ public class UserController implements UserControllerDocumentation {
     transferService.transfer(userIdFrom, userIdTo, money);
     return ResponseEntity.ok().build();
   }
-
-//  @PostMapping("/login")
-//  public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
-//    AuthResponse response = authService.login(request);
-//    return ResponseEntity.ok(response);
-//  }
 }

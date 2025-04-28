@@ -24,16 +24,17 @@ import lombok.Setter;
 @AllArgsConstructor
 @Table(name = "EMAIL_DATA")
 public class EmailData {
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
   @ManyToOne
-  @JoinColumn(name = "USER_ID", nullable = false)
+  @JoinColumn(name = "user_id")
   private User user;
 
-    @Column(length = 200, unique = true)
-    @Email(message = "Неверный формат email")
-    @NotBlank(message = "Email не может быть пустым")
-    private String email;
+  @Column(length = 200, unique = true)
+  @Email(message = "Неверный формат email")
+  @NotBlank(message = "Email не может быть пустым")
+  private String email;
 }

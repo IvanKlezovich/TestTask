@@ -5,23 +5,22 @@ import com.example.testtask.exception.EntityExistsException;
 import com.example.testtask.exception.InvalidTransferException;
 import com.example.testtask.repository.AccountRepository;
 import com.example.testtask.service.TransferService;
+import java.math.BigDecimal;
+import java.util.concurrent.locks.StampedLock;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
-import java.util.concurrent.locks.StampedLock;
-
 @Service
 @RequiredArgsConstructor
 public class TransferServiceImpl implements TransferService {
 
+  private static final BigDecimal MAX_TRANSFER_AMOUNT = new BigDecimal("1000000.00");
+  private static final BigDecimal MIN_TRANSFER_AMOUNT = new BigDecimal("0.01");
   private final Logger log = LoggerFactory.getLogger(TransferServiceImpl.class);
   private final AccountRepository accountRepository;
   private final StampedLock balanceLock = new StampedLock();
-  private static final BigDecimal MAX_TRANSFER_AMOUNT = new BigDecimal("1000000.00");
-  private static final BigDecimal MIN_TRANSFER_AMOUNT = new BigDecimal("0.01");
 
   @Override
   public void transfer(Long userIdFrom, Long userIdTo, BigDecimal money) {
@@ -33,10 +32,10 @@ public class TransferServiceImpl implements TransferService {
     long stamp = balanceLock.writeLock();
     try {
       Account senderAccount = accountRepository.findById(userIdFrom)
-              .orElseThrow(() -> new EntityExistsException("Отправитель не найден"));
+          .orElseThrow(() -> new EntityExistsException("Отправитель не найден"));
 
       Account recipientAccount = accountRepository.findById(userIdTo)
-              .orElseThrow(() -> new EntityExistsException("Получатель не найден"));
+          .orElseThrow(() -> new EntityExistsException("Получатель не найден"));
 
       validateBalance(senderAccount, money);
 

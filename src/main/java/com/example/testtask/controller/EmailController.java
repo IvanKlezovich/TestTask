@@ -1,6 +1,10 @@
 package com.example.testtask.controller;
 
+import com.example.testtask.controller.documentation.EmailControllerDocumentation;
 import com.example.testtask.service.EmailService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,13 +18,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/email")
-public class EmailController {
+@SecurityRequirement(name = "Test-service")
+public class EmailController implements EmailControllerDocumentation {
 
   private final EmailService emailService;
 
   @DeleteMapping()
   public ResponseEntity<Void> deleteEmail(
       @RequestParam Long userId,
+      @NotBlank(message = "Email не может быть пустым")
+      @Email(message = "Неверный формат email")
       @RequestParam String email) {
     emailService.deleteEmail(userId, email);
     return ResponseEntity.noContent().build();
@@ -28,7 +35,11 @@ public class EmailController {
 
   @PatchMapping("/update")
   public ResponseEntity<Void> updateEmail(@RequestParam Long userId,
+      @NotBlank(message = "Email не может быть пустым")
+      @Email(message = "Неверный формат email")
       @RequestParam String oldEmail,
+      @NotBlank(message = "Email не может быть пустым")
+      @Email(message = "Неверный формат email")
       @RequestParam String newEmail) {
     emailService.updateEmail(userId, oldEmail, newEmail);
     return ResponseEntity.ok().build();
@@ -36,6 +47,8 @@ public class EmailController {
 
   @PostMapping("/add")
   public ResponseEntity<Void> addEmail(@RequestParam Long userId,
+      @NotBlank(message = "Email не может быть пустым")
+      @Email(message = "Неверный формат email")
       @RequestParam String email) {
     emailService.addEmail(userId, email);
     return ResponseEntity.status(HttpStatus.CREATED).build();

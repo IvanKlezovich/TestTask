@@ -17,8 +17,10 @@ public interface PhoneDataRepository extends JpaRepository<PhoneData, Long> {
 
   PhoneData getPhoneDataByUser_IdAndPhone(Long userId, String phone);
 
-  boolean existsPhoneDataByPhone(@Pattern(regexp = "^\\d{11}$", message = "Телефон должен быть в формате 11 цифр") @NotBlank(message = "Телефон не может быть пустым") String phone);
+  boolean existsPhoneDataByPhone(
+      @Pattern(regexp = "^\\d{11}$", message = "Телефон должен быть в формате 11 цифр") @NotBlank(message = "Телефон не может быть пустым") String phone);
 
   @Query("SELECT COUNT(p) > 1 FROM PhoneData p WHERE p.user.id = :userId AND p.phone = :phone")
-  boolean countPhoneDataByUser_IdAndPhoneMoreThan1(Long userId, @Pattern(regexp = "^\\d{11}$", message = "Телефон должен быть в формате 11 цифр") @NotBlank(message = "Телефон не может быть пустым") String phone);
+  boolean countPhoneDataByUser_IdAndPhoneMoreThan1(Long userId,
+      @Pattern(regexp = "^\\d{11}$", message = "Телефон должен быть в формате 11 цифр") @NotBlank(message = "Телефон не может быть пустым") String phone);
 }

@@ -12,20 +12,35 @@ services:
     ports:
       - "5432:5432"
 
-  app:
-    container_name: testApp
-    build:
-      context: .
-    restart: always
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://test-db:5432/skill_matrix
-      ENTRY_DELAY: 5
+  cache:
+    image: "redis"
     ports:
-      - "8080:8080"
-    depends_on:
-      - db
+      - "6379:6379"
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
     networks:
       internal:
+
+# Я не смог сделать так чтобы спринг подключился к контейнеру cache, он ломился все время на локалхосте
+#  app:
+#    container_name: testApp
+#    build:
+#      context: .
+#    restart: always
+#    environment:
+#      - SERVER_PORT=8080
+#      - SPRING_DATASOURCE_URL=jdbc:postgresql://test-db:5432/test_database
+#      - ENTRY_DELAY=5
+#      - SPRING_REDIS_HOST=cache
+#      - SPRING_REDIS_PORT=6379
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - db
+#      - cache
+#    networks:
+#      internal:
 
 networks:
   internal:

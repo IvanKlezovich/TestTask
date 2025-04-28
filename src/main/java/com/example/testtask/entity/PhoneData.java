@@ -24,6 +24,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Table(name = "PHONE_DATA")
 public class PhoneData {
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
@@ -32,8 +33,8 @@ public class PhoneData {
   @JoinColumn(name = "USER_ID", nullable = false)
   private User user;
 
-    @Column(length = 13, unique = true)
-    @Pattern(regexp = "^\\d{11}$", message = "Телефон должен быть в формате 11 цифр")
-    @NotBlank(message = "Телефон не может быть пустым")
-    private String phone;
+  @Column(length = 13, unique = true)
+  @Pattern(regexp = "^\\d{11}$", message = "Телефон должен быть в формате 11 цифр")
+  @NotBlank(message = "Телефон не может быть пустым")
+  private String phone;
 }

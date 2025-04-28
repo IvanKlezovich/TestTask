@@ -1,18 +1,26 @@
 {
-  "id": "d838a70b-5ba1-45d1-89e4-6c5cd3b00cbc",
-  "title": "QA",
-  "supervisor": {
-    "userId": "f8a12bcc-d715-48b5-8119-9f511cb26229",
-    "name": "Auto Support",
-    "positionName": "Senior Team Leader"
-  },
-  "specializationPositions": [
+  "content": [
     {
-      "id": "c36f970c-11d5-4337-94e9-0a780d6cea8c",
-      "title": "RM1",
-      "positionName": "Team Leader",
-      "positionId": "45e35464-c0d3-427d-bdbb-1a3bd67ea69d",
-      "enable": true
+      "id": 7,
+      "name": "Дмитрий Петрович",
+      "birthday": "1985-04-25",
+      "phoneData": [
+        {
+          "id": 7,
+          "phone": "+79991234573"
+        }
+      ],
+      "emailData": [
+        {
+          "id": 7,
+          "email": "dmitry.petrovich@company.com"
+        }
+      ],
+      "balance": 1980.00
     }
-  ]
+  ],
+  "totalPages": 1,
+  "totalElements": 1,
+  "size": 10,
+  "number": 0
 }

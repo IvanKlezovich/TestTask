@@ -1,0 +1,188 @@
+{
+  "content": [
+    {
+      "id": 1,
+      "name": "Алексей Николаевич",
+      "birthday": "1978-03-15",
+      "phoneData": [
+        {
+          "id": 1,
+          "phone": "+79991234567"
+        }
+      ],
+      "emailData": [
+        {
+          "id": 1,
+          "email": "alexey.petrov@company.com"
+        }
+      ],
+      "balance": 1100.00
+    },
+    {
+      "id": 2,
+      "name": "Екатерина Сергеевна",
+      "birthday": "1992-08-22",
+      "phoneData": [
+        {
+          "id": 2,
+          "phone": "+79991234568"
+        }
+      ],
+      "emailData": [
+        {
+          "id": 2,
+          "email": "ekaterina.sergeevna@company.com"
+        }
+      ],
+      "balance": 2200.00
+    },
+    {
+      "id": 3,
+      "name": "Михаил Андреевич",
+      "birthday": "1987-02-14",
+      "phoneData": [
+        {
+          "id": 3,
+          "phone": "+79991234569"
+        }
+      ],
+      "emailData": [
+        {
+          "id": 3,
+          "email": "mikhail.andreevich@company.com"
+        }
+      ],
+      "balance": 1650.00
+    },
+    {
+      "id": 4,
+      "name": "Мария Ивановна",
+      "birthday": "1995-11-30",
+      "phoneData": [
+        {
+          "id": 4,
+          "phone": "+79991234570"
+        }
+      ],
+      "emailData": [
+        {
+          "id": 4,
+          "email": "maria.ivanovna@company.com"
+        }
+      ],
+      "balance": 2750.00
+    },
+    {
+      "id": 5,
+      "name": "Сергей Викторович",
+      "birthday": "1982-06-28",
+      "phoneData": [
+        {
+          "id": 5,
+          "phone": "+79991234571"
+        }
+      ],
+      "emailData": [
+        {
+          "id": 5,
+          "email": "sergey.viktorovich@company.com"
+        }
+      ],
+      "balance": 3300.00
+    },
+    {
+      "id": 6,
+      "name": "Наталья Михайловна",
+      "birthday": "1991-09-18",
+      "phoneData": [
+        {
+          "id": 6,
+          "phone": "+79991234572"
+        }
+      ],
+      "emailData": [
+        {
+          "id": 6,
+          "email": "natalya.mikhailovna@company.com"
+        }
+      ],
+      "balance": 1320.00
+    },
+    {
+      "id": 7,
+      "name": "Дмитрий Петрович",
+      "birthday": "1985-04-25",
+      "phoneData": [
+        {
+          "id": 7,
+          "phone": "+79991234573"
+        }
+      ],
+      "emailData": [
+        {
+          "id": 7,
+          "email": "dmitry.petrovich@company.com"
+        }
+      ],
+      "balance": 1980.00
+    },
+    {
+      "id": 8,
+      "name": "Анна Алексеевна",
+      "birthday": "1993-01-12",
+      "phoneData": [
+        {
+          "id": 8,
+          "phone": "+79991234574"
+        }
+      ],
+      "emailData": [
+        {
+          "id": 8,
+          "email": "anna.alexeevna@company.com"
+        }
+      ],
+      "balance": 2420.00
+    },
+    {
+      "id": 9,
+      "name": "Иван Васильевич",
+      "birthday": "1989-07-20",
+      "phoneData": [
+        {
+          "id": 9,
+          "phone": "+79991234575"
+        }
+      ],
+      "emailData": [
+        {
+          "id": 9,
+          "email": "ivan.vasilevich@company.com"
+        }
+      ],
+      "balance": 3080.00
+    },
+    {
+      "id": 10,
+      "name": "Ольга Николаевна",
+      "birthday": "1994-03-15",
+      "phoneData": [
+        {
+          "id": 10,
+          "phone": "+79991234576"
+        }
+      ],
+      "emailData": [
+        {
+          "id": 10,
+          "email": "olga.nikolaevna@company.com"
+        }
+      ],
+      "balance": 3850.00
+    }
+  ],
+  "totalPages": 1,
+  "totalElements": 10,
+  "size": 10,
+  "number": 0
+}

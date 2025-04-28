@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface AccountRepository extends JpaRepository<Account, Long> {
 
-    @Modifying
-    @Query("update Account a set a.balance = a.balance * 1.1 where a.balance * 1.1 <= a.startDeposit * 2.07")
-    void updateBalance();
+  @Modifying
+  @Query("update Account a set a.balance = a.balance * 1.1 where a.balance * 1.1 <= a.startDeposit * 2.07")
+  void updateBalance();
 }

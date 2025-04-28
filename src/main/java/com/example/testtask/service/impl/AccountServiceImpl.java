@@ -10,11 +10,11 @@ import org.springframework.transaction.annotation.Transactional;
 @AllArgsConstructor
 public class AccountServiceImpl {
 
-    private final AccountRepository accountRepository;
+  private final AccountRepository accountRepository;
 
-    @Transactional
-    @Scheduled(fixedDelay = 30000)
-    public void triggerBalanceUpdate() {
-        accountRepository.updateBalance();
-    }
+  @Transactional
+  @Scheduled(fixedDelay = 30000)
+  public void triggerBalanceUpdate() {
+    accountRepository.updateBalance();
+  }
 }

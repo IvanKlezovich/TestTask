@@ -1,15 +1,17 @@
 package com.example.testtask.repository;
 
 import com.example.testtask.entity.User;
+import java.time.LocalDate;
+import java.util.Optional;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import java.time.LocalDate;
-import java.util.Optional;
-
+@CacheConfig(cacheNames = "users")
 public interface UserRepository extends JpaRepository<User, Long> {
 
   @Query("""
@@ -28,19 +30,13 @@ public interface UserRepository extends JpaRepository<User, Long> {
       @Param("dateOfBirth") LocalDate dateOfBirth,
       Pageable pageable);
 
+  @Cacheable(key = "#id", unless = "#result == null")
   User getUserById(Long id);
 
   @Query("""
-          select u from User u
-                  join PhoneData pd
-          where pd.phone = :phone
-          """)
-  Optional<User> findByPhone(String phone);
-
-  @Query("""
-          select u from User u
-                  join EmailData ed
-          where ed.email = :email
-          """)
+      select u from User u
+              join EmailData ed on u.id = ed.user.id
+      where ed.email = :email
+      """)
   Optional<User> findByEmail(String email);
 }

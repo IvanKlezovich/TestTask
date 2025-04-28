@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+  <changeSet author="Ivan Klezovich" id="3">
+    <createTable tableName="PHONE_DATA">
+      <column name="ID" type="bigserial">
+        <constraints nullable="false" primaryKey="true"/>
+      </column>
+      <column name="USER_ID" type="bigserial">
+        <constraints nullable="false"/>
+      </column>
+      <column name="PHONE" type="varchar(13)">
+        <constraints nullable="false" unique="true"/>
+      </column>
+    </createTable>
+      <addForeignKeyConstraint baseColumnNames="USER_ID"
+                               baseTableName="PHONE_DATA"
+                               constraintName="FK_PHONE_DATA_USER"
+                               referencedColumnNames="ID"
+                               referencedTableName="USERS"/>
+  </changeSet>
+</databaseChangeLog>

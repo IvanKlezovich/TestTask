@@ -1,0 +1,26 @@
+{
+  "content": [
+    {
+      "id": 7,
+      "name": "Дмитрий Петрович",
+      "birthday": "1985-04-25",
+      "phoneData": [
+        {
+          "id": 7,
+          "phone": "+79991234573"
+        }
+      ],
+      "emailData": [
+        {
+          "id": 7,
+          "email": "dmitry.petrovich@company.com"
+        }
+      ],
+      "balance": 1980.00
+    }
+  ],
+  "totalPages": 1,
+  "totalElements": 1,
+  "size": 10,
+  "number": 0
+}

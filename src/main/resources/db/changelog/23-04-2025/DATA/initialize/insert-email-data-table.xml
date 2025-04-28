@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+  <changeSet author="Ivan Klezovich" id="7">
+    <insert tableName="EMAIL_DATA">
+      <column name="ID">1</column>
+      <column name="USER_ID">1</column>
+      <column name="EMAIL">alexey.petrov@company.com</column>
+    </insert>
+
+    <insert tableName="EMAIL_DATA">
+      <column name="ID">2</column>
+      <column name="USER_ID">2</column>
+      <column name="EMAIL">ekaterina.sergeevna@company.com</column>
+    </insert>
+
+    <insert tableName="EMAIL_DATA">
+      <column name="ID">3</column>
+      <column name="USER_ID">3</column>
+      <column name="EMAIL">mikhail.andreevich@company.com</column>
+    </insert>
+
+    <insert tableName="EMAIL_DATA">
+      <column name="ID">4</column>
+      <column name="USER_ID">4</column>
+      <column name="EMAIL">maria.ivanovna@company.com</column>
+    </insert>
+
+    <insert tableName="EMAIL_DATA">
+      <column name="ID">5</column>
+      <column name="USER_ID">5</column>
+      <column name="EMAIL">sergey.viktorovich@company.com</column>
+    </insert>
+
+    <insert tableName="EMAIL_DATA">
+      <column name="ID">6</column>
+      <column name="USER_ID">6</column>
+      <column name="EMAIL">natalya.mikhailovna@company.com</column>
+    </insert>
+
+    <insert tableName="EMAIL_DATA">
+      <column name="ID">7</column>
+      <column name="USER_ID">7</column>
+      <column name="EMAIL">dmitry.petrovich@company.com</column>
+    </insert>
+
+    <insert tableName="EMAIL_DATA">
+      <column name="ID">8</column>
+      <column name="USER_ID">8</column>
+      <column name="EMAIL">anna.alexeevna@company.com</column>
+    </insert>
+
+    <insert tableName="EMAIL_DATA">
+      <column name="ID">9</column>
+      <column name="USER_ID">9</column>
+      <column name="EMAIL">ivan.vasilevich@company.com</column>
+    </insert>
+
+    <insert tableName="EMAIL_DATA">
+      <column name="ID">10</column>
+      <column name="USER_ID">10</column>
+      <column name="EMAIL">olga.nikolaevna@company.com</column>
+    </insert>
+  </changeSet>
+</databaseChangeLog>

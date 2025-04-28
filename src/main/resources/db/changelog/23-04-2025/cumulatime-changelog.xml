@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+  <changeSet author="Ivan Klezovich" id="0">
+    <tagDatabase tag="add and insert tables for app"/>
+  </changeSet>
+
+  <include file="/db/changelog/23-04-2025/DATA/add-tables.xml"/>
+  <include file="/db/changelog/23-04-2025/DATA/initialize-tables.xml"/>
+</databaseChangeLog>
